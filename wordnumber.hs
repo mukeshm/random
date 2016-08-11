@@ -7,8 +7,8 @@ import Data.List (intersperse)
 
 -- convert a number into words
 -- ex : 1234 -> "one-two-three-four"
-digitToWord :: Int -> String
-digitToWord n = concat $ intersperse "-" $ map wordNumber $ digits n
+wordNumber :: Int -> String
+wordNumber n = concat $ intersperse "-" $ map digitToWord $ digits n
 
 -- convert a number into list of individual digits
 -- ex : 1234 -> [1,2,3,4]
@@ -23,14 +23,14 @@ digits n = go n []
 -- convert a digit to its word form
 -- ex : 2 -> "two"
 -- 7 -> "seven"
-wordNumber :: Int -> String
-wordNumber 0 = "zero"
-wordNumber 1 = "one"
-wordNumber 2 = "two"
-wordNumber 3 = "three"
-wordNumber 4 = "four"
-wordNumber 5 = "five"
-wordNumber 6 = "six"
-wordNumber 7 = "seven"
-wordNumber 8 = "eight"
-wordNumber 9 = "nine"
+digitToWord :: Int -> String
+digitToWord 0 = "zero"
+digitToWord 1 = "one"
+digitToWord 2 = "two"
+digitToWord 3 = "three"
+digitToWord 4 = "four"
+digitToWord 5 = "five"
+digitToWord 6 = "six"
+digitToWord 7 = "seven"
+digitToWord 8 = "eight"
+digitToWord 9 = "nine"
