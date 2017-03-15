@@ -66,10 +66,12 @@ instance Misty ((->) t) where
 
 -- -- Exercise 10
 -- -- Relative Difficulty: 6
--- instance Misty (EitherLeft t) where
---   banana = error "todo"
---   unicorn = error "todo"
---
+instance Misty (EitherLeft t) where
+  banana f (EitherLeft ev) = case ev of
+    Left a -> f a
+    Right b -> EitherLeft (Right b)
+  unicorn a = EitherLeft (Left a)
+
 -- -- Exercise 11
 -- -- Relative Difficulty: 6
 -- instance Misty (EitherRight t) where
