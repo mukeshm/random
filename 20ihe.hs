@@ -60,10 +60,10 @@ instance Misty Maybe where
 
 -- -- Exercise 9
 -- -- Relative Difficulty: 6
--- instance Misty ((->) t) where
---   banana = error "todo"
---   unicorn = error "todo"
---
+instance Misty ((->) t) where
+  banana f ma = \r -> f (ma r) r
+  unicorn a = const a
+
 -- -- Exercise 10
 -- -- Relative Difficulty: 6
 -- instance Misty (EitherLeft t) where
