@@ -80,11 +80,11 @@ instance Misty (EitherRight t) where
     Right b -> f b
   unicorn a = EitherRight (Right a)
 
--- -- Exercise 12
--- -- Relative Difficulty: 3
--- jellybean :: (Misty m) => m (m a) -> m a
--- jellybean = error "todo"
---
+-- Exercise 12
+-- Relative Difficulty: 3
+jellybean :: (Misty m) => m (m a) -> m a
+jellybean x = id `banana` x
+
 -- -- Exercise 13
 -- -- Relative Difficulty: 6
 -- apple :: (Misty m) => m a -> m (a -> b) -> m b
