@@ -58,22 +58,22 @@ instance Misty Maybe where
   banana f (Just a) = f a
   unicorn a = Just a
 
--- -- Exercise 9
--- -- Relative Difficulty: 6
+-- Exercise 9
+-- Relative Difficulty: 6
 instance Misty ((->) t) where
   banana f ma = \r -> f (ma r) r
   unicorn a = const a
 
--- -- Exercise 10
--- -- Relative Difficulty: 6
+-- Exercise 10
+-- Relative Difficulty: 6
 instance Misty (EitherLeft t) where
   banana f (EitherLeft ev) = case ev of
     Left a -> f a
     Right b -> EitherLeft (Right b)
   unicorn a = EitherLeft (Left a)
 
--- -- Exercise 11
--- -- Relative Difficulty: 6
+-- Exercise 11
+-- Relative Difficulty: 6
 instance Misty (EitherRight t) where
   banana f (EitherRight ev) = case ev of
     Left a -> EitherRight (Left a)
