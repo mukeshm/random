@@ -85,11 +85,11 @@ instance Misty (EitherRight t) where
 jellybean :: (Misty m) => m (m a) -> m a
 jellybean x = id `banana` x
 
--- -- Exercise 13
--- -- Relative Difficulty: 6
--- apple :: (Misty m) => m a -> m (a -> b) -> m b
--- apple = error "todo"
---
+-- Exercise 13
+-- Relative Difficulty: 6
+apple :: (Misty m) => m a -> m (a -> b) -> m b
+apple mx mf = (\x -> (\f -> unicorn (f x)) `banana` mf) `banana` mx
+
 -- -- Exercise 14
 -- -- Relative Difficulty: 6
 -- moppy :: (Misty m) => [a] -> (a -> m b) -> m [b]
