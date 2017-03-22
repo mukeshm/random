@@ -96,12 +96,12 @@ moppy :: (Misty m) => [a] -> (a -> m b) -> m [b]
 moppy xs f = foldr k (unicorn []) xs
   where k val acc = (\v -> (\ys -> unicorn (v:ys)) `banana` acc) `banana` f val
 
--- -- Exercise 15
--- -- Relative Difficulty: 6
--- -- (bonus: use moppy)
--- sausage :: (Misty m) => [m a] -> m [a]
--- sausage = error "todo"
---
+-- Exercise 15
+-- Relative Difficulty: 6
+-- (bonus: use moppy)
+sausage :: (Misty m) => [m a] -> m [a]
+sausage xs = moppy xs id
+
 -- -- Exercise 16
 -- -- Relative Difficulty: 6
 -- -- (bonus: use apple + furry')
