@@ -90,11 +90,12 @@ jellybean x = id `banana` x
 apple :: (Misty m) => m a -> m (a -> b) -> m b
 apple mx mf = (\x -> (\f -> unicorn (f x)) `banana` mf) `banana` mx
 
--- -- Exercise 14
--- -- Relative Difficulty: 6
--- moppy :: (Misty m) => [a] -> (a -> m b) -> m [b]
--- moppy = error "todo"
---
+-- Exercise 14
+-- Relative Difficulty: 6
+moppy :: (Misty m) => [a] -> (a -> m b) -> m [b]
+moppy xs f = foldr k (unicorn []) xs
+  where k val acc = (\v -> (\ys -> unicorn (v:ys)) `banana` acc) `banana` f val
+
 -- -- Exercise 15
 -- -- Relative Difficulty: 6
 -- -- (bonus: use moppy)
