@@ -108,12 +108,12 @@ sausage xs = moppy xs id
 banana2 :: (Misty m) => (a -> b -> c) -> m a -> m b -> m c
 banana2 f a b = apple b (furry' f a) 
 
--- -- Exercise 17
--- -- Relative Difficulty: 6
--- -- (bonus: use apple + banana2)
--- banana3 :: (Misty m) => (a -> b -> c -> d) -> m a -> m b -> m c -> m d
--- banana3 = error "todo"
---
+-- Exercise 17
+-- Relative Difficulty: 6
+-- (bonus: use apple + banana2)
+banana3 :: (Misty m) => (a -> b -> c -> d) -> m a -> m b -> m c -> m d
+banana3 f a b c = apple c (banana2 f a b)
+
 -- -- Exercise 18
 -- -- Relative Difficulty: 6
 -- -- (bonus: use apple + banana3)
