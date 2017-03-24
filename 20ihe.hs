@@ -120,10 +120,10 @@ banana3 f a b c = apple c (banana2 f a b)
 banana4 :: (Misty m) => (a -> b -> c -> d -> e) -> m a -> m b -> m c -> m d -> m e
 banana4 f a b c d = apple d (banana3 f a b c)
 
--- newtype State s a = State {
---   state :: (s -> (s, a))
--- }
---
+newtype State s a = State {
+  state :: (s -> (s, a))
+}
+
 -- -- Exercise 19
 -- -- Relative Difficulty: 9
 -- instance Fluffy (State s) where
