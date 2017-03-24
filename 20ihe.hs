@@ -102,12 +102,12 @@ moppy xs f = foldr k (unicorn []) xs
 sausage :: (Misty m) => [m a] -> m [a]
 sausage xs = moppy xs id
 
--- -- Exercise 16
--- -- Relative Difficulty: 6
--- -- (bonus: use apple + furry')
--- banana2 :: (Misty m) => (a -> b -> c) -> m a -> m b -> m c
--- banana2 = error "todo"
---
+-- Exercise 16
+-- Relative Difficulty: 6
+-- (bonus: use apple + furry')
+banana2 :: (Misty m) => (a -> b -> c) -> m a -> m b -> m c
+banana2 f a b = apple b (furry' f a) 
+
 -- -- Exercise 17
 -- -- Relative Difficulty: 6
 -- -- (bonus: use apple + banana2)
