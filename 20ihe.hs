@@ -124,11 +124,12 @@ newtype State s a = State {
   state :: (s -> (s, a))
 }
 
--- -- Exercise 19
--- -- Relative Difficulty: 9
--- instance Fluffy (State s) where
---   furry = error "todo"
---
+-- Exercise 19
+-- Relative Difficulty: 9
+instance Fluffy (State s) where
+  furry f sa = State $ \s -> let (s', a) = state sa s
+                                 in (s', f a)
+
 -- -- Exercise 20
 -- -- Relative Difficulty: 10
 -- instance Misty (State s) where
