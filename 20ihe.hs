@@ -114,12 +114,12 @@ banana2 f a b = apple b (furry' f a)
 banana3 :: (Misty m) => (a -> b -> c -> d) -> m a -> m b -> m c -> m d
 banana3 f a b c = apple c (banana2 f a b)
 
--- -- Exercise 18
--- -- Relative Difficulty: 6
--- -- (bonus: use apple + banana3)
--- banana4 :: (Misty m) => (a -> b -> c -> d -> e) -> m a -> m b -> m c -> m d -> m e
--- banana4 = error "todo"
---
+-- Exercise 18
+-- Relative Difficulty: 6
+-- (bonus: use apple + banana3)
+banana4 :: (Misty m) => (a -> b -> c -> d -> e) -> m a -> m b -> m c -> m d -> m e
+banana4 f a b c d = apple d (banana3 f a b c)
+
 -- newtype State s a = State {
 --   state :: (s -> (s, a))
 -- }
