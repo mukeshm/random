@@ -130,8 +130,9 @@ instance Fluffy (State s) where
   furry f sa = State $ \s -> let (s', a) = state sa s
                                  in (s', f a)
 
--- -- Exercise 20
--- -- Relative Difficulty: 10
--- instance Misty (State s) where
---   banana = error "todo"
---   unicorn = error "todo"
+-- Exercise 20
+-- Relative Difficulty: 10
+instance Misty (State s) where
+  banana f sa = State $ \s -> let (s', a) = state sa s
+                                  in state (f a) s'
+  unicorn a = State $ \s -> (s, a)
